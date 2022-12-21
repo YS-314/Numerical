@@ -6,4 +6,4 @@ import math
 #Shu-Osher (3,3)
 def eSSP33(ab):
     if ab == 1:
-        x = np.array([])
+        x = tri2darr()
