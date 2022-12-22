@@ -21,23 +21,24 @@ es_METHODS = {'eSR33': eSSP33,
            'eSR22': eSSP22,
            'eSR54': eSSP54}
 
-def eSSP_ints1(func,t,U,method='eSR33'):
+def eSSP_int(func,t,U,tn,h,method='eSR33',kl):
     """
     1 step of eSSP integration
     func: callable function
-    t = time value (np n dimensional array) 
-    U = value of U (np n dimensional array)
+    t: time value (np n dimensional array) 
+    U: value of U (np n dimensional array)
+    tn: end time
+    h: stepsize 
     method: methods (default eSR33)
-    kl = keep list of evaluations
+    ui: dictionary of u^i values
+    kl: keep list of evaluations
     """
+    ui = {"u0": np.array(U)}
     if method in es_METHODS:
         method = es_METHODS[method]
     alpha = method.alpha
     beta = method.beta
+    
     for i in t:
         Ua
 
-
-def eSSP_int(func,t0,U0,t_end,method,kl):
-    for    :
-        eSSP_ints1
