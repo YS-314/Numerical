@@ -1,6 +1,6 @@
 import numpy as np
 
-def tri2darr(coeff):
+def tri2darr(*coeff):
   n = int(1/2*((8*len(coeff)+1)**(1/2)-1))
   j = 0
   X = np.empty((n,n))
