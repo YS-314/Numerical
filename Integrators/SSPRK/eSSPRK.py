@@ -53,6 +53,7 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
         ustr = "u" + str(i)
     if method in es_METHODS:
         method = es_METHODS[method]
-    if adaptive = false:
-        
+    if adaptive = False:
+        hn = h 
+
 
