@@ -5,21 +5,21 @@ import numpy as np
 import math
 
 #Shu-Osher (3,3)
-class eSSP33(eSSPRK):
+class eSSP33():
     alpha = tri2darr(1,3/4,1/4,1/3,0,2/3)
     beta = tri2darr(1,0,1,0,0,1)
     s = 3
     p = 3
     adaptive = False
 #eSSPRK(2,2)
-class eSSP22(eSSPRK):
+class eSSP22():
     alpha = tri2darr(1,1/2,1/2)
     beta = tri2darr(1,0,1)
     s = 2
     p = 2
     adaptive = False
 #eSSPRK(5,4)
-class eSSP54(eSSPRK):
+class eSSP54():
     alpha = tri2darr(1,0.444370493651235,0.555629506348765,0.620101851488403,0,0.379898148511597,0.178079954393132,0,0,0.821920045606868,0,0,0.517231671970585, 0.096059710526147,0.386708617503268 )
     beta = tri2darr(0.391752226571890,0, 0.368410593050371,0,0,0.251891774271694,0,0,0,0.544974750228521,0,0,0,0.063692468666290,0.226007483236906) 
     s = 5
@@ -42,16 +42,17 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
     ui: dictionary of u^i values
     kl: keep list of evaluations
     """
-    ui = {"u0": np.array(U)}
     #initialise
+    n = U.shape
+    alpha = method.alpha
+    beta = method.beta
+    s = method.s
+    ui = np.empty((s+1,)+(n))
+    adaptive = method.adaptive
     for i in range(s):
         ustr = "u" + str(i)
     if method in es_METHODS:
         method = es_METHODS[method]
-    alpha = method.alpha
-    beta = method.beta
-    s = method.s
-    adaptive = method.adaptive
     if adaptive = false:
         
 
