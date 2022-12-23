@@ -43,6 +43,9 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
     kl: keep list of evaluations
     """
     ui = {"u0": np.array(U)}
+    #initialise
+    for i in range(s):
+        ustr = "u" + str(i)
     if method in es_METHODS:
         method = es_METHODS[method]
     alpha = method.alpha
