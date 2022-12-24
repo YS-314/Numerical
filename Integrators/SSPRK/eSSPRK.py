@@ -51,7 +51,10 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
     s = method.s
     adaptive = method.adaptive
     if adaptive = False:
-            eSSPstep_na(n,s,h,U,func,alpha,beta) 
+            k = math.floor((tn-t)/h)
+            for ti in range(k-2):
+                U = eSSPstep_na(n,s,h,U,func,alpha,beta)
+            U = eSSPstep_na(n,s,tn - hk,U,func,alpha,beta)
 
 def eSSPstep_na(n,s,dt,U,func,alpha, beta):
     ui = np.zeros((s+1,)+(n))
