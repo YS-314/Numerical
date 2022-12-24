@@ -37,23 +37,28 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
     t: time value (np n dimensional array) 
     U: value of U (np n dimensional array)
     tn: end time
-    h: stepsize 
+    h: (initial) stepsize 
     method: methods (default eSR33)
     ui: dictionary of u^i values
     kl: keep list of evaluations
     """
     #initialise
+        if method in es_METHODS:
+        method = es_METHODS[method]
     n = U.shape
     alpha = method.alpha
     beta = method.beta
     s = method.s
-    ui = np.empty((s+1,)+(n))
     adaptive = method.adaptive
-    for i in range(s):
-        ustr = "u" + str(i)
-    if method in es_METHODS:
-        method = es_METHODS[method]
     if adaptive = False:
-        hn = h 
+            eSSPstep_na(n,s,h,U,func,alpha,beta) 
+
+def eSSPstep_na(n,s,dt,U,func,alpha, beta):
+    ui = np.zeros((s+1,)+(n))
+    ui[0] = U
+    for i in range(s-1):
+        Xi = np.zeros(n)
+        for j = range(i-1):
+            Xi += alpha[i,j]*ui[j] + dt*beta[i,j]func(ui[j])
 
 
