@@ -7,14 +7,14 @@ import math
 #Shu-Osher (3,3)
 class eSSP33():
     alpha = tri2darr(1,3/4,1/4,1/3,0,2/3)
-    beta = tri2darr(1,0,1,0,0,1)
+    beta = tri2darr(1,0,1/4,0,0,2/3)
     s = 3
     p = 3
     adaptive = False
 #eSSPRK(2,2)
 class eSSP22():
     alpha = tri2darr(1,1/2,1/2)
-    beta = tri2darr(1,0,1)
+    beta = tri2darr(1,0,1/2)
     s = 2
     p = 2
     adaptive = False
@@ -60,10 +60,10 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
 def eSSPstep_na(n,s,dt,U,func,alpha, beta):
     ui = np.zeros((s+1,)+(n))
     ui[0] = U
-    for i in range(s-1):
+    for i in range1(s+1,1): #prevent ui[0] from being overwritten
         Xi = np.zeros(n)
-        for j in range(i-1):
-            Xi += alpha[i,j]*ui[j] + dt*beta[i,j]*func(ui[j])
+        for j in range1(i):
+            Xi += alpha[i-1,j]*ui[j] + dt*beta[i-1,j]*func(ui[j])
         ui[i] = Xi
-    return ui[s-1]
+    return ui[s]
 
