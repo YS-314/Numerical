@@ -11,3 +11,8 @@ def tri2darr(*coeff):
     j += 1
     cl += j
   return X
+
+def range1(stop, start=0, step=1):
+    if start == stop:
+        return np.array([start])
+    else: return range(start, stop, step)
