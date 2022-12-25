@@ -43,14 +43,14 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
     kl: keep list of evaluations
     """
     #initialise
-        if method in es_METHODS:
+    if method in es_METHODS:
         method = es_METHODS[method]
     n = U.shape
     alpha = method.alpha
     beta = method.beta
     s = method.s
     adaptive = method.adaptive
-    if adaptive = False:
+    if adaptive == False:
             k = math.floor((tn-t)/h)
             for ti in range(k-2):
                 U = eSSPstep_na(n,s,h,U,func,alpha,beta)
@@ -61,7 +61,6 @@ def eSSPstep_na(n,s,dt,U,func,alpha, beta):
     ui[0] = U
     for i in range(s-1):
         Xi = np.zeros(n)
-        for j = range(i-1):
-            Xi += alpha[i,j]*ui[j] + dt*beta[i,j]func(ui[j])
-
+        for j in range(i-1):
+            Xi += alpha[i,j]*ui[j] + dt*beta[i,j]*func(ui[j])
 
