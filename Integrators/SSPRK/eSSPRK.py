@@ -55,6 +55,7 @@ def eSSP_int(func,t,U,tn,h,method='eSR33',kl=False):
             for ti in range(k-2):
                 U = eSSPstep_na(n,s,h,U,func,alpha,beta)
             U = eSSPstep_na(n,s,tn - h*k,U,func,alpha,beta)
+    return U
 
 def eSSPstep_na(n,s,dt,U,func,alpha, beta):
     ui = np.zeros((s+1,)+(n))
@@ -63,4 +64,6 @@ def eSSPstep_na(n,s,dt,U,func,alpha, beta):
         Xi = np.zeros(n)
         for j in range(i-1):
             Xi += alpha[i,j]*ui[j] + dt*beta[i,j]*func(ui[j])
+        ui[i] = Xi
+    return ui[s-1]
 
