@@ -6,11 +6,11 @@ n: (integer) index of split flux
 pm: (±1) positive or negative flux
 fi: (callable) f(u(xi))
 '''
-
+class 
 #Roe flux
 #fp: (callable) derivative of f
 def roe(n,pm,fi,fp):
-    
+
 
 
 #Local Lax-Friedrichs / Rusanov
