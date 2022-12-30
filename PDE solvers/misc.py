@@ -6,7 +6,9 @@ class ui_pe:
         fun.uil = uil
         fun.shape = ui.shape
     
-    def ui(fun,*i):
+    def ui(fun,i):
+         # i is the array of index
+         ur = np.zeros()
          
 
 
