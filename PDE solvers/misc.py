@@ -13,9 +13,11 @@ class ui_pe:
 
 
 class fin_diff:
-    def __init__(func, fi):
-        func.fi(i) = f(i) 
+    def __init__(func, f):
+        func.fun = f 
 
+    def fi(func, i):
+        return func.fun(i)
     
     def fS(n):
         return fi(range(i,i+n))
