@@ -10,7 +10,7 @@ def kron_delta(i,j):
     else:
         return 0
 
-def Fdcoeff(stenc,d):
+def Fdcoeff_1D(stenc,d):
     N = len(stenc)
     sten = np.array(stenc)
     A = np.zeros((N,N))
