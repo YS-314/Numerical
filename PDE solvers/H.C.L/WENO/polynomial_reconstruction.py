@@ -9,7 +9,7 @@ def crj_u(r,s,j):
         def fcrj_n1(q):
             return r - q + 1
         def fcrj_n(l):
-            return prod_neq(0,k,np.sort([m,l]),fcrj_n1)
+            return prod_neq(0,k,[m,l],fcrj_n1)
         def fcrj_d(l):
             return m - l
         
