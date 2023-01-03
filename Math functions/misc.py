@@ -4,7 +4,7 @@
 m0: start of sum (int)
 n: end of sum (int)
 neq: values to skip (1D list of int)
-f: function to rake sum of (callable)
+f: function to take sum of (callable)
 '''
 def sum_neq(m0,n,neq,f):
     X = 0
