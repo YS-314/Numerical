@@ -16,4 +16,5 @@ def crj_u(r,s,j):
         X += sum_neq(0,k,[m],fcrj_n)/prod_neq(0,k,[m],fcrj_d) #denominator correct
     return X
 
-
+def crjt_u(r,s,j):
+    return crj_u(r-1,s+1,j)
