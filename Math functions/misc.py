@@ -37,7 +37,7 @@ def prod_neq(m0,n,neq,f):
 #inputs same as sum_neq / prod_neq
 #more naive implementation: computes unnecessary (skipped) terms. Not suitable if function is undefined at the points.
 #Accuracy might be slightly lower than functions above due to floating point error caused by multiplying then dividing skipped terms
-def sum_neq_ez(m0,n,neq,f):
+def sum_neq_2(m0,n,neq,f):
     X = 0
     for m in range(m0, n+1):
         X += f(m)
@@ -45,7 +45,7 @@ def sum_neq_ez(m0,n,neq,f):
         X -= f(neq[m])
     return X
 
-def prod_neq_ez(m0,n,neq,f):
+def prod_neq_2(m0,n,neq,f):
     X = 1
     for m in range(m0, n+1):
         X *= f(m)
