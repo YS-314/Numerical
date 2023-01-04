@@ -1,14 +1,16 @@
 import math
-import numpy
+import numpy as np
 
 #determine coefficients for WENO reconstruction scheme in a uniform grid
 class rec_coeff:
-    def __init__(param,r,s):
-        param.r = np.array(r)
-        param.s = np.array(s)
-        param.len = min(param.r.shape,param.s.shape)
+    def __init__(coeff,r,s):
+        coeff.r = np.array(r)
+        coeff.s = np.array(s)
+        coeff.len = min(coeff.r.shape,coeff.s.shape)
+        coeff.coeff = np.zeros(coeff.len)
     
-    def 
+    def crj(j):
+        return j
     
 
 
@@ -27,4 +29,4 @@ def crj_u(r,s,j):
     return X
 
 def crjt_u(r,s,j):
-    return crj_u(r-1,s+1,j)
+    return crj_u(r-1,s+1,j) 
