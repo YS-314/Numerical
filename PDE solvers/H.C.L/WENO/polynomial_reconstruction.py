@@ -25,15 +25,17 @@ class rec_coeff:
 def crj_u(r,s,j):
     k = r+s+1
     X = 0
-    for m in range(j+1,k+1):
+    if j<k:
         def fcrj_n1(q):
-            return r - q + 1
-        def fcrj_n(l):
-            return prod_neq(0,k,[m,l],fcrj_n1)
-        def fcrj_d(l):
-            return m - l
-        
-        X += sum_neq(0,k,[m],fcrj_n)/prod_neq(0,k,[m],fcrj_d) #denominator correct
+                return r - q + 1
+        for m in range(j+1,k+1): # range is correct
+            def fcrj_n(l):
+                return prod_neq(0,k,[m,l],fcrj_n1)
+            def fcrj_d(l):
+                return m - l
+            X += sum_neq(0,k,[m],fcrj_n)/prod_neq(0,k,[m],fcrj_d) #denominator correct
+    else:
+        X = 0
     return X
 
 def crjt_u(r,s,j):
