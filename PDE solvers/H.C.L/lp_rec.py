@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from .neq_sp import sum_neq, prod_neq
 
 #determine coefficients for WENO reconstruction scheme in a uniform grid
 import itertools
