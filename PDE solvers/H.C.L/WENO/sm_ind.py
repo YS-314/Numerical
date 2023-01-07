@@ -1,1 +1,1 @@
-#smoothness inicator
+#smoothness indicator
