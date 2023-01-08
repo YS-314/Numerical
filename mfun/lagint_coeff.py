@@ -1,1 +1,1 @@
-#coefficients for lagrage interpolating polynomial
+#coefficients for lagrange interpolating polynomial
