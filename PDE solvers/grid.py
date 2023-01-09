@@ -18,8 +18,8 @@ class u_xi:
         else:
             raise IndexError("fi's length does not match with object")
 
-    def fi(uio):
-        return uio
+    def fi(uio,i)
+        return uio.fi[i]
 
     def ui(uio, i):
         return i*uio.delta
