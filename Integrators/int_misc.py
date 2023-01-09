@@ -1,4 +1,5 @@
 import numpy as np
+from mfun.misc.misc_mfun import range1
 
 def tri2darr(*coeff):
   n = int(1/2*((8*len(coeff)+1)**(1/2)-1))
@@ -12,7 +13,3 @@ def tri2darr(*coeff):
     cl += j
   return X
 
-def range1(stop, start=0, step=1):
-    if start == stop:
-        return np.array([start])
-    else: return range(start, stop, step)
