@@ -6,7 +6,7 @@ class u_xi:
     def __init__(uio,ist, iend,delta):
         uio.ist = np.array(ist)
         uio.iend = np.array(iend)
-        uio.delta = delta
+        uio.delta = np.array(delta)
 
     def cfi(uio,fi):
         uio.fi = np.array(fi) 
