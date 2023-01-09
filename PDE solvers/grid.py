@@ -8,7 +8,7 @@ class u_xi:
         uio.iend = iend
         uio.delta = delta
     def ui(uio, i):
-        if 
+        return i*uio.delta
 
 class u_xi2:
     def __init__(ui,start,delta,i):
