@@ -3,6 +3,7 @@
 #Uses Shu-Osher form of RK methods
 import numpy as np
 import math
+from ..int_misc import tri2darr
 
 #Shu-Osher (3,3)
 class eSSP33():
