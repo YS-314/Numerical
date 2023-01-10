@@ -1,1 +1,2 @@
 #smoothness indicator
+def smi()
