@@ -11,9 +11,10 @@ class rec_coeff:
         coeff.shape = np.array(min(coeff.r.shape,coeff.s.shape)+(np.amax(coeff.r+coeff.s)+1,))
         coeff.coeff = np.zeros(coeff.shape)
         coeff.dim = len(coeff.shape)
-        lrange = [0]*(coeff.dim)
+        '''lrange = [0]*(coeff.dim)
         for d in range(coeff.dim):
-            lrange[d] = range(0,coeff.shape[d])
+            lrange[d] = range(0,coeff.shape[d])''' 
+        lrange = [range(d) for d in coeff.shape]
         if unif == True:
             for i in itertools.product(*lrange): #unpack lrange and use for loop (x no. dimensions) to fill up n-d array
                 coeff.coeff[i] = crj_u(coeff.r[i[:coeff.dim-1]],coeff.s[i[:coeff.dim-1]],i[coeff.dim-1])
