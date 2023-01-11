@@ -7,4 +7,4 @@ def poly1(alpha, rj):
 	n = length(rj)
 	cj = np.zeros(n)
 	for j in range1()
-	cj[]=math.fsum(itertools.combinations(rj,))
+	cj[]=(-1)**(n+j)math.fsum(itertools.combinations(rj,))
