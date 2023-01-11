@@ -13,7 +13,7 @@ class rec_coeff:
         coeff.dim = len(coeff.shape)
         '''lrange = [0]*(coeff.dim)
         for d in range(coeff.dim):
-            lrange[d] = range(0,coeff.shape[d])''' 
+            lrange[d] = range(0,coeff.shape[d])''' #should be represented more concisely with list comprehension
         lrange = [range(d) for d in coeff.shape]
         if unif == True:
             for i in itertools.product(*lrange): #unpack lrange and use for loop (x no. dimensions) to fill up n-d array
