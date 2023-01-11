@@ -10,7 +10,7 @@ class rec_coeff:
         coeff.s = np.array(s)
         coeff.shape = np.array(min(coeff.r.shape,coeff.s.shape)+(np.amax(coeff.r+coeff.s)+1,))
         coeff.coeff = np.zeros(coeff.shape)
-        coeff.dim = len(coeff.shape)
+        coeff.dim = len(coeff.shape) # do we need this?
         '''lrange = [0]*(coeff.dim)
         for d in range(coeff.dim):
             lrange[d] = range(0,coeff.shape[d])''' #should be represented more concisely with list comprehension
