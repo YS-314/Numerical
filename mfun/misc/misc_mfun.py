@@ -1,6 +1,7 @@
 
 #miscellaneous math functions
 import numpy as np
+import math
 
 def range1(stop, start=0, step=1):
     if start == stop:
