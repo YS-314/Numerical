@@ -11,6 +11,7 @@ def poly1(rj, alpha = 1):
 		cj[j] = alpha*(-1)**(n+j)*math.fsum([math.prod(x)for x in list(itertools.combinations(rj,n-j))])
 	return cj
 
+def poly_e(cf, )
 #coefficients for lagrange interpolating polynomial
 def lpcoeff()
 
