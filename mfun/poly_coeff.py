@@ -35,7 +35,7 @@ def lbpcf(j,xi):
 	k = len(xi)-1
 	cf = np.array()
 	alpha = 1/prod_neq(0,k,[j],alpw)
-	poly_e
+	return poly1(xi,alpha) #!!!!
 	
 	
 
