@@ -1,3 +1,8 @@
+import math
+import numpy as np
+from mfun.misc.misc_mfun import range1
+from mfun.misc.neq_sp import prod_neq
+
 #coefficients for lagrange interpolating polynomial (1D only)
 def lpcf(xi, yi):
 	k = min(len(xi),len(yi))-1
