@@ -13,14 +13,32 @@ def poly1(rj, alpha = 1):
 		cj[j] = alpha*(-1)**(n+j)*math.fsum([math.prod(x)for x in list(itertools.combinations(rj,n-j))])
 	return cj
 
-def poly_e(cf, x):
-	#cf: 2D array of coeff of degree 
-	xn = x
-	X = cf[0] #coefficient for x^0 (constant)
-	for j in range(1,len(cf)):
-		X += cf[j]*xn
-		xn *= x
-	return X
+def poly_el(cf, L):
+    def poly_e(x):
+        #cf: 2D array of coeff of degree 
+        xn = x
+        X = cf[0] #coefficient for x^0 (constant)
+        for j in range(1,len(cf)):
+            X += cf[j]*xn
+            xn *= x
+        return X
+    return [poly_e(xn) for xn in L]
+
+def poly_e2(cf, x):
+    def polx(x1):
+        X = cf[0]
+        for i in range(1,len(cf)):
+            X += cf[i]*(x1**i)
+        return X
+    return [polx(xn) for xn in x]
+
+def poly_r(x, rj, alpha = 1): #fastest
+    def polr(x1):
+        X = x1 - rj[0]
+        for i in range(1,len(rj)):
+            X *= x1 - rj[i]
+        return X
+    return [alpha*polr(xn) for xn in x]
 
 #Lagrange polynomial
 
