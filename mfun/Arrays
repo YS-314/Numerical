@@ -1,0 +1,7 @@
+#Support for array and tensors
+import itertools
+
+#element-wise operations
+def elwop(f,*array):
+	for x in 
+
