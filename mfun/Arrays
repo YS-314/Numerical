@@ -3,6 +3,6 @@ import itertools
 
 #element-wise operations
 def elwop(f,*array):
-	for x in itertools.product(*array):
+	return [f(x) x in itertools.product(*array)]
 		
 
