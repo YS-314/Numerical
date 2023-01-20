@@ -1,6 +1,5 @@
 import numpy as np
 
-
 #note: ist and iend must be a list
 class u_xi:
     def __init__(uio,ist, iend,delta):
@@ -35,3 +34,12 @@ class u_xi2:
 
 #Non uniform grid 
 class nu_xi:
+    def __init__(grid,coord):
+        grid.grid = np.array(coord, dtype = object)
+        grid.dx = np.diff(mesh.mesh)
+    
+    def ui(grid, i):
+        return grid.grid[i]
+
+
+
