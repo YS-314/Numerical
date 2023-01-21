@@ -1,9 +1,19 @@
 #Support for array and tensors
+#requires all lists to be numpy arrays
 import itertools
 
-#get shape of array
-def getshp(m,*arrays):
-  return tuple(arr.shape[m] for arr in np.array(arrays,dtype=object))
+#package arrays
+#returns tuple containing numpy arrays
+def packarr(*arrays):
+	return arrays
+
+#shape of arrays at mth dimension
+def getshp_mdim(m, arrays):
+    return tuple(arr.shape[m] for arr in arrays)
+
+#Get list number of dimensions in 
+def getdim(arrays):
+    return [np.ndim(array) for array in arrays]
 
 #element-wise operations
 def elwop(f,*array):
