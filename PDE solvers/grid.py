@@ -1,4 +1,5 @@
 import numpy as np
+from mfun.misc.array import elwop
 
 #note: ist and iend must be a list
 class u_xi:

@@ -12,16 +12,20 @@ def getshp_mdim(m, arrays):
     return tuple(arr.shape[m] for arr in arrays)
 
 #
-def minshape(*arrays):
+def minshape(arrays):
     return tuple([min(getshp_mdim(x,arrays)) for x in range(min(getdim(arrays)))])
 
 #Get list number of dimensions in 
 def getdim(arrays):
     return [np.ndim(array) for array in arrays]
 
-#element-wise operations
-def elwop(f,*array):
-	n = min(*array.shape)
-	return n #[f(x) x in itertools.product(*array)]
+#element-wise operations. Does not accept floats/integers
+def elwop(func, arrays, shape = 0):
+    if shape == 0:
+        shape = arrays[0].shape
+    result = np.zeros(shape)
+    for index in np.ndindex(shape):
+        result[index] = func(*tuple(arr[index] for arr in arrays))
+    return result
 		
 
