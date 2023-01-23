@@ -3,13 +3,14 @@ from mfun.misc.array import elwop
 
 #note: ist and iend must be a list
 class u_xi:
-    def __init__(uio,ist, iend,delta):
+    def __init__(uio,ist, iend,delta, bound):
         uio.ist = np.array(ist)
         uio.iend = np.array(iend)
         uio.delta = np.array(delta)
+        uio.bd = bound
 
     def cfi(uio,fi):
-        uio.fi = np.array(fi) 
+        uio.fi = np.array(fi, dtype = object) 
         
 
     def cfi_ce(uio,fi):
@@ -26,6 +27,10 @@ class u_xi:
 
     def ui(uio, i):
         return i*uio.delta
+
+    def uil(uio, I):
+        return np.array([uio.ui(I[x]) for x in np.ndindex(I.shape[:I.ndim-1])])
+
 
 class u_xi2:
     def __init__(ui,start,delta,i):
