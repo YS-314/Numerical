@@ -21,7 +21,8 @@ class u_xi:
     def fi(uio,i):
         if uio.ist<=i<=uio.iend:
             return uio.fi[i]
-        else: return 
+        else: 
+            return 
 
     def ui(uio, i):
         return i*uio.delta
