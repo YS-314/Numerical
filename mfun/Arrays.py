@@ -20,9 +20,11 @@ def getdim(arrays):
     return [np.ndim(array) for array in arrays]
 
 #element-wise operations. Does not accept floats/integers
-def elwop(func, arrays, shape = 0):
-    if shape == 0:
+def elwop(func, arrays, shape = None):
+    if shape == None:
         shape = arrays[0].shape
+    elif shape = 0:
+        #???
     result = np.zeros(shape)
     for index in np.ndindex(shape):
         result[index] = func(*tuple(arr[index] for arr in arrays))
