@@ -23,7 +23,7 @@ def getdim(arrays):
 def elwop(func, arrays, shape = None):
     if shape == None:
         shape = arrays[0].shape
-    elif shape = 0:
+    elif shape == 0:
         #???
     result = np.zeros(shape)
     for index in np.ndindex(shape):
