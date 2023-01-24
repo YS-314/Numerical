@@ -1,6 +1,7 @@
 #Support for array and tensors
 #requires all lists to be numpy arrays, while multiple lists are to be stored in tuples
 import itertools
+import numpy as np
 
 #package arrays
 #returns tuple containing numpy arrays
