@@ -5,16 +5,19 @@ from mfun.misc.misc_mfun import range1
 from mfun.misc.neq_sp import prod_neq
 
 # for 1D
-def poly1c(rj, alpha = 1):
-	n = len(rj)
+def poly1c(j, rj, alpha = 1):
+	'''n = len(rj)
 	cj = [0]*(n+1)#np.zeros(n+1)
-	for j in range1(n+1):
+	for j in range1(n+1):'''
 		
-		cj[j] = alpha*(-1)**(n+j)*math.fsum([math.prod(x)for x in list(itertools.combinations(rj,n-j))])
+		cj'''[j]''' = alpha*(-1)**(n+j)*math.fsum([math.prod(x)for x in list(itertools.combinations(rj,n-j))])
 	return cj
 
 #recursive definition
-def poly1(rj, alpha = 1)
+def poly1(rj, alpha = 1):
+	cj = [0]*(n+1)
+	def rec_cj(j,):
+
 
 def poly_el(cf, L):
     def poly_e(x):
@@ -71,4 +74,5 @@ def lbpcf1(j,xi):
 	return poly1(xi,alpha) 	
 
 #Lagrange polynomials, barycentric form 
+#-> enable addition of points
 lp_bf()
