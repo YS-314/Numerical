@@ -5,13 +5,8 @@ from mfun.misc.misc_mfun import range1
 from mfun.misc.neq_sp import prod_neq
 
 # for 1D
-<<<<<<< HEAD
-def poly1c(j, rj, alpha = 1):
-	n = len(rj)
-=======
 def poly1c(j, rj, alpha = 1):
 	'''n = len(rj)
->>>>>>> 166acd537df796ddc51a8fcbacd7354fb7075a02
 	cj = [0]*(n+1)#np.zeros(n+1)
 	for j in range1(n+1):'''
 		
