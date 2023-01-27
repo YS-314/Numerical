@@ -1,6 +1,7 @@
 import itertools
 import math
 import numpy as np
+import sympy
 from mfun.misc.misc_mfun import range1
 from mfun.misc.neq_sp import prod_neq
 
@@ -17,6 +18,12 @@ def poly1c(j, rj, alpha = 1):
 def poly1(rj, alpha = 1):
 	cj = [0]*(n+1)
 	def rec_cj(j,):
+
+def pcf(coeff):
+    x = sympy.Symbol('x')
+    P = math.prod(x - coeff)
+    C = P.expand().aspoly().all_coeffs()
+    return C
 
 
 def poly_el(cf, L):
