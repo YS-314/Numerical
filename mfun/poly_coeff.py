@@ -11,7 +11,7 @@ def poly1c(j, rj, alpha = 1):
 	cj = [0]*(n+1)#np.zeros(n+1)
 	for j in range1(n+1):'''
 		
-		cj'''[j]''' = alpha*(-1)**(n+j)*math.fsum([math.prod(x)for x in list(itertools.combinations(rj,n-j))])
+	cj = alpha*(-1)**(n+j)*math.fsum([math.prod(x)for x in list(itertools.combinations(rj,n-j))])
 	return cj
 
 #recursive definition
@@ -19,10 +19,12 @@ def poly1(rj, alpha = 1):
 	cj = [0]*(n+1)
 	def rec_cj(j,):
 
+    return     
+
 def pcf(coeff):
     x = sympy.Symbol('x')
     P = math.prod(x - coeff)
-    C = P.coeffs()
+    C = P.expand().aspoly().all_coeffs()
     return C
 
 
