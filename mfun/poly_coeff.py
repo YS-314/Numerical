@@ -22,7 +22,7 @@ def poly1(rj, alpha = 1):
 def pcf(coeff):
     x = sympy.Symbol('x')
     P = math.prod(x - coeff)
-    C = P.expand().aspoly().all_coeffs()
+    C = P.coeffs()
     return C
 
 
