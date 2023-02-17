@@ -3,17 +3,19 @@ from mfun.misc.array import elwop
 #grid for finite difference/finite volume methods (discrete)
 #note: ist and iend must be a list
 #bt is bound type, bval is boundary value
-#bound will be a tuple of start and end values for bt == 1: .
+#Boundary conditions will be the first and last values of the list (-1)
+#, so the range of numerically calculated values range from 1... esecond last element (-2)
+#and values outside boundary conditions will be forced into a triangular domain (by rounding function) 
 class u_xi:
-    def __init__(uio,ist, iend,delta, bound, bval, bt = 0):
+    def __init__(uio,ist, iend,delta): #, bound, bval, bt = 0
         uio.ist = np.array(ist)
         uio.iend = np.array(iend)
         uio.delta = np.array(delta)
-        uio.bt = bt
+        '''uio.bt = bt
         
 
 
-        uio.bd = bound
+        uio.bd = bound'''
 
     def cfi(uio,fi):
         uio.fi = np.array(fi, dtype = object) 
@@ -26,14 +28,15 @@ class u_xi:
             raise IndexError("fi's length does not match with object")
 #Implement Dirichlet boundary condition for PDE
     def fi(uio,i):
-        
+        return uio.fi[i]
+        # 0 and -1 (for last element) will be the boundary conditions
         '''if bt == 0:
             if uio.ist<=i<=uio.iend:
                 return uio.fi[i]
             else: 
-                return uio.bd[]
+                return uio.bd
         elif bt == 1:
-            if uio.ist<=i<=uio.iend:
+            if i>=uio.iend:
                 return uio.fi[i]
             else: 
                 return uio.bd[]'''
