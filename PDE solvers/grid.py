@@ -26,7 +26,8 @@ class u_xi:
             raise IndexError("fi's length does not match with object")
 #Implement Dirichlet boundary condition for PDE
     def fi(uio,i):
-        if bt = 0:
+        
+        '''if bt == 0:
             if uio.ist<=i<=uio.iend:
                 return uio.fi[i]
             else: 
@@ -35,7 +36,7 @@ class u_xi:
             if uio.ist<=i<=uio.iend:
                 return uio.fi[i]
             else: 
-                return uio.bd[]
+                return uio.bd[]'''
 
     def ui(uio, i):
         return i*uio.delta
