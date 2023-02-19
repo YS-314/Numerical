@@ -1,11 +1,14 @@
 import numpy as np
-from mfun.misc.array import elwop
+
+from mfun.arrays import elwop
+
 #grid for finite difference/finite volume methods (discrete)
 #note: ist and iend must be a list
 #bt is bound type, bval is boundary value
 #Boundary conditions will be the first and last values of the list (-1)
 #, so the range of numerically calculated values range from 1... esecond last element (-2)
-#and values outside boundary conditions will be forced into a triangular domain (by rounding function) 
+#and values outside boundary conditions will be forced into a triangular domain (by rounding function)
+#
 class u_xi:
     def __init__(uio,ist, iend,delta): #, bound, bval, bt = 0
         uio.ist = np.array(ist)
