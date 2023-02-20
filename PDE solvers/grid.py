@@ -32,7 +32,7 @@ class u_xi:
 #Implement Dirichlet boundary condition for PDE
     def fi(uio,i):
         return uio.fi[i]
-        # 0 and -1 (for last element) will be the boundary conditions
+        # 0 and -1 (for last element) will be the boundary conditions for fi
         '''if bt == 0:
             if uio.ist<=i<=uio.iend:
                 return uio.fi[i]
@@ -59,6 +59,7 @@ class u_xi:
 '''
 
 #Non uniform grid 
+#ui[0],fi[0] 
 class nu_xi:
     def __init__(grid,coord):
         grid.grid = np.array(coord, dtype = object)
@@ -66,6 +67,9 @@ class nu_xi:
     
     def ui(grid, i):
         return grid.grid[i]
+
+    def fi(grid, i):
+        return 
 
 
 
