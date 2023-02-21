@@ -46,9 +46,14 @@ class u_xi:
 
     def ui(uio, i):
         return i*uio.delta
-
+    
+    '''No ragged sequences, innermost vector's dimensions must be equal
+     to number of dimensions supported'''
     def uil(uio, I):
-        return np.array([uio.ui(I[x]) for x in np.ndindex(I.shape[:I.ndim-1])])
+        uiL = np.zeros(I.shape, dtype = object)
+        for x in np.ndindex(I.shape[:I.ndim-1]):
+            uiL[x] = uio.ui(I[x])
+        return uiL
 
 
 '''class u_xi2:
