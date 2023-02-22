@@ -64,7 +64,7 @@ class u_xi:
 '''
 
 #Non uniform grid 
-#ui[0],fi[0] 
+#ui[0],fi[0] and ui[-1], fi[-1] are boundary values 
 class nu_xi:
     def __init__(grid,coord):
         grid.grid = np.array(coord, dtype = object)
