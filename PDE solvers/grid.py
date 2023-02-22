@@ -54,6 +54,11 @@ class u_xi:
         for x in np.ndindex(I.shape[:I.ndim-1]):
             uiL[x] = uio.ui(I[x])
         return uiL
+    '''ragged sequences allowed, innermost vector's dimensions must be equal
+     to number of dimensions supported'''
+     #Use recursion and enumerate
+    def uilr(uio,I):
+        
 
 
 '''class u_xi2:
